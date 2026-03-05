@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>NetPeek - Ayuda</title>
+
+<style>
+body{
+    background:#0d1117;
+    color:#00ff9c;
+    font-family: Consolas, monospace;
+    margin:40px;
+}
+
+h1{
+    color:#00ffaa;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+.box{
+    border:1px solid #00ff9c;
+    padding:20px;
+    margin-top:20px;
+}
+
+.port{
+    margin:8px 0;
+}
+
+button{
+    background:#00ff9c;
+    border:none;
+    padding:10px 15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00cc7a;
+}
+
+footer{
+    margin-top:40px;
+    font-size:14px;
+    color:#6affc9;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>NetPeek — Ayuda</h1>
+
+<div class="box">
+<p>
+La <b>opción 4</b> del menú de NetPeek muestra información básica sobre
+<b>puertos de red comunes</b> y para qué servicios suelen usarse.
+</p>
+
+<p>
+Un puerto abierto no significa que exista una vulnerabilidad.
+Solo indica que <b>hay un servicio escuchando conexiones</b>.
+</p>
+</div>
+
+<div class="box">
+<h2>Puertos comunes</h2>
+
+<div class="port"><b>21</b> → FTP — transferencia de archivos</div>
+<div class="port"><b>22</b> → SSH — acceso remoto seguro</div>
+<div class="port"><b>23</b> → Telnet — acceso remoto sin cifrado</div>
+<div class="port"><b>25</b> → SMTP — envío de correos</div>
+<div class="port"><b>53</b> → DNS — resolución de dominios</div>
+<div class="port"><b>80</b> → HTTP — páginas web</div>
+<div class="port"><b>443</b> → HTTPS — web cifrada</div>
+<div class="port"><b>445</b> → SMB — archivos en red Windows</div>
+<div class="port"><b>3389</b> → RDP — escritorio remoto Windows</div>
+<div class="port"><b>3306</b> → MySQL — base de datos</div>
+<div class="port"><b>5432</b> → PostgreSQL — base de datos</div>
+<div class="port"><b>8080</b> → HTTP alternativo</div>
+
+</div>
+
+<div class="box">
+<h2>¿Qué hace NetPeek?</h2>
+
+<p>
+NetPeek intenta conectarse a un puerto usando <b>TCP sockets</b>.
+Si la conexión responde, el puerto se marca como <b>abierto</b>.
+</p>
+
+<p>
+Esto es una técnica básica de <b>reconocimiento de red</b>.
+</p>
+</div>
+
+<div class="box">
+<h2>Uso ético</h2>
+
+<p>
+Usa esta herramienta solo en:
+</p>
+
+<ul>
+<li>tu propia máquina</li>
+<li>laboratorios de práctica</li>
+<li>sistemas donde tengas permiso</li>
+</ul>
+
+<p>
+Escanear redes sin autorización puede ser ilegal.
+</p>
+</div>
+
+<button onclick="window.close()">Cerrar</button>
+
+<footer>
+NetPeek • simple recon tool
+</footer>
+
+</div>
+
+</body>
+</html>

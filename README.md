@@ -163,7 +163,7 @@ Estructura sugerida:
 ```
 netpeek/
 │
-├── netpeek.py
+├── NetPeek.py
 ├── scanner.py
 ├── ports.py
 ├── utils.py
