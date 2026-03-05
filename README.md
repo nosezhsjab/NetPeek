@@ -119,6 +119,7 @@ python NetPeek.py
 ```
 Después aparecerá el menú principal:
 
+```
 ==================================================
 NetPeek - Menú Principal
 ==================================================
@@ -130,8 +131,8 @@ NetPeek - Menú Principal
 5) Salir
 
 Selecciona una opción:
+```
 1. Escaneo de puertos comunes
-
 Escanea una lista de puertos conocidos como:
 
 21  FTP
