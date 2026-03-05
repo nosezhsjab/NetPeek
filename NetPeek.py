@@ -26,10 +26,10 @@ def main():
 
 {'='*50}
 Selecciona una opción: """
+    #------------------------------
     print(NetPeek_ascii, end="")
     print(main_text, end="")
     opcion = int(input())
     if opcion == 5: quit()
-    elif opcion == 4:
-        webbrowser.open("ayuda.html")
+    elif opcion == 4:webbrowser.open("ayuda.html")
 main()
