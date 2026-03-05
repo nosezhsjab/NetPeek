@@ -110,35 +110,72 @@ pip install -r requirements.txt
 
 # Uso
 
-Escaneo de puertos comunes:
+NetPeek se ejecuta desde la terminal y presenta un **menú interactivo** para elegir el tipo de escaneo.
+
+Ejecuta el programa:
 
 ```bash
-python netpeek.py --target 192.168.1.10 --common
+python NetPeek.py
 ```
+Después aparecerá el menú principal:
 
-Escaneo de lista de puertos:
+==================================================
+NetPeek - Menú Principal
+==================================================
 
-```bash
-python netpeek.py --target 192.168.1.10 --ports 22,80,443
-```
+1) Escanear puertos comunes
+2) Escanear lista de puertos
+3) Escanear rango de puertos
+4) Ayuda
+5) Salir
 
-Escaneo de rango:
+Selecciona una opción:
+1. Escaneo de puertos comunes
 
-```bash
-python netpeek.py --target 192.168.1.10 --range 1-1024
-```
+Escanea una lista de puertos conocidos como:
 
-Timeout personalizado:
+21  FTP
+22  SSH
+23  Telnet
+25  SMTP
+53  DNS
+80  HTTP
+443 HTTPS
 
-```bash
-python netpeek.py --target 192.168.1.10 --common --timeout 0.5
-```
+Solo debes introducir la IP o dominio objetivo.
 
----
+Ejemplo:
 
-# Ejemplo de salida
+Target: 192.168.1.10
+2. Escaneo de lista personalizada
 
-```
+Permite definir puertos específicos separados por comas.
+
+Ejemplo:
+
+Target: 192.168.1.10
+Puertos: 22,80,443,3306
+3. Escaneo de rango de puertos
+
+Escanea un rango completo de puertos.
+
+Ejemplo:
+
+Target: 192.168.1.10
+Rango: 1-1024
+4. Ayuda
+
+Abre una página de ayuda donde se explican:
+
+qué es un puerto
+
+cómo funciona el escaneo
+
+qué significan los resultados
+
+conceptos básicos de redes
+
+Ejemplo de salida
 NetPeek v0.1
 Target: 192.168.1.10
 
@@ -152,9 +189,21 @@ Encrypted web traffic.
 
 Scan completed.
 10 ports scanned in 1.8 seconds
-```
 
 ---
+
+💡 **Consejo de proyecto open-source**
+
+Podrías incluso añadir una sección pequeña:
+
+
+python NetPeek.py --help
+
+
+que muestre el menú o instrucciones rápidas. No es obligatorio, pero a la gente le gusta.
+
+---
+
 
 # Arquitectura del proyecto
 
