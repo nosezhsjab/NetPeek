@@ -176,7 +176,7 @@ qué significan los resultados
 
 conceptos básicos de redes
 
-Ejemplo de salida
+**Ejemplo de salida**
 NetPeek v0.1
 Target: 192.168.1.10
 
