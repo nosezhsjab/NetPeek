@@ -191,19 +191,7 @@ Encrypted web traffic.
 Scan completed.
 10 ports scanned in 1.8 seconds
 
----
 
-💡 **Consejo de proyecto open-source**
-
-Podrías incluso añadir una sección pequeña:
-
-
-python NetPeek.py --help
-
-
-que muestre el menú o instrucciones rápidas. No es obligatorio, pero a la gente le gusta.
-
----
 
 
 # Arquitectura del proyecto
