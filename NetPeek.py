@@ -1,6 +1,11 @@
 import webbrowser
 import time
 import scanner as sc
+import os
+from colorama import init, Fore
+
+init(autoreset=True)
+
 NetPeek_ascii = """
  _   _      _   ____            _    
 | \ | | ___| |_|  _ \ ___  ___ | | __
@@ -70,8 +75,9 @@ def main():
             else:
                 print("Opción fuera de rango.")
 
-        except ValueError:
-            print("Opción no válida. Ingresa un número.")
+        except ValueError as e:
+            
+            print(Fore.RED + f"Opción no válida. Ingresa un número.\nError:", Fore.RESET + Fore.MAGENTA + str(e))
             time.sleep(2)
-
+            os.system('cls' if os.name == 'nt' else 'clear')
 main()

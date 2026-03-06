@@ -1,4 +1,1 @@
-# Añade aquí las dependencias de tu proyecto
-# Ejemplo:
-# requests==2.28.0
-# scapy==2.5.0
+colorama
