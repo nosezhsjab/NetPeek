@@ -1,5 +1,6 @@
 import webbrowser
-
+import time
+import scanner as sc
 NetPeek_ascii = """
  _   _      _   ____            _    
 | \ | | ___| |_|  _ \ ___  ___ | | __
@@ -10,10 +11,25 @@ NetPeek_ascii = """
       simple port recon tool
 """
 
+import webbrowser
+import time
+import scanner as sc
+
+NetPeek_ascii = """
+ _   _      _   ____            _    
+| \ | | ___| |_|  _ \ ___  ___ | | __
+|  \| |/ _ \ __| |_) / _ \/ _ \| |/ /
+| |\  |  __/ |_|  __/  __/ (_) |   <
+|_| \_|\___|\__|_|   \___|\___/|_|\_\
+
+      simple port recon tool
+"""
+
 def main():
-    #definimiento de variables ;v
-    global NetPeek_ascii
-    main_text = f"""
+
+    while True:
+
+        main_text = f"""
 {'='*50}
               NETPEEK - MAIN MENU
 {'='*50}
@@ -25,11 +41,37 @@ def main():
 [5] Salir
 
 {'='*50}
-Selecciona una opción: """
-    #------------------------------
-    print(NetPeek_ascii, end="")
-    print(main_text, end="")
-    opcion = int(input())
-    if opcion == 5: quit()
-    elif opcion == 4:webbrowser.open("ayuda.html")
+"""
+
+        print(NetPeek_ascii)
+        print(main_text)
+
+        try:
+            opcion = int(input("Selecciona una opción: "))
+
+            if opcion == 5:
+                quit()
+
+            elif opcion == 4:
+                webbrowser.open("ayuda.html")
+
+            elif opcion == 3:
+                ip = input("Target (IP o dominio): ")
+                sc.rango_de_puertos(ip)
+
+            elif opcion == 2:
+                ip = input("Target (IP o dominio): ")
+                sc.escan_rapido(ip)
+
+            elif opcion == 1:
+                ip = input("Target (IP o dominio): ")
+                sc.escanear_host(ip)
+
+            else:
+                print("Opción fuera de rango.")
+
+        except ValueError:
+            print("Opción no válida. Ingresa un número.")
+            time.sleep(2)
+
 main()
