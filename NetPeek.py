@@ -61,15 +61,15 @@ def main():
                 webbrowser.open("ayuda.html")
 
             elif opcion == 3:
-                ip = input("Target (IP o dominio): ")
+                ip = str(input("Target (IP o dominio): ").strip())
                 sc.rango_de_puertos(ip)
 
             elif opcion == 2:
-                ip = input("Target (IP o dominio): ")
+                ip = str(input("Target (IP o dominio): ").strip())
                 sc.escan_rapido(ip)
 
             elif opcion == 1:
-                ip = input("Target (IP o dominio): ")
+                ip = str(input("Target (IP o dominio): ").strip())
                 sc.escanear_host(ip)
 
             else:

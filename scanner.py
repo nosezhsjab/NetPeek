@@ -1,19 +1,28 @@
 import socket
 import time
+from concurrent.futures import ThreadPoolExecutor
+
+#codigo echo por chatGPT, haci que no me pregunten nada weyes.
+#att: NST
+TIMEOUT = 0.3
+MAX_THREADS = 200
+
 
 def scan_port(ip, port):
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(1)
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(TIMEOUT)
 
-    result = s.connect_ex((ip, port))
+        result = s.connect_ex((ip, port))
 
-    if result == 0:
-        print(f"[OPEN] {port}/tcp")
-    else:
-        print(f"[CLOSED] {port}/tcp")
+        if result == 0:
+            print(f"[OPEN] {port}/tcp")
 
-    s.close()
+        s.close()
+
+    except:
+        pass
 
 
 def escanear_host(ip):
@@ -23,13 +32,14 @@ def escanear_host(ip):
 
     start = time.time()
 
-    for port in range(1, 1025):
-        scan_port(ip, port)
+    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+        executor.map(lambda port: scan_port(ip, port), range(1,1025))
 
     end = time.time()
 
     print("\nScan terminado")
     print(f"Tiempo: {round(end-start,2)} segundos")
+
 
 
 def escan_rapido(ip):
@@ -44,13 +54,14 @@ def escan_rapido(ip):
 
     start = time.time()
 
-    for port in common_ports:
-        scan_port(ip, port)
+    with ThreadPoolExecutor(max_workers=50) as executor:
+        executor.map(lambda port: scan_port(ip, port), common_ports)
 
     end = time.time()
 
     print("\nScan terminado")
     print(f"Tiempo: {round(end-start,2)} segundos")
+
 
 
 def rango_de_puertos(ip):
@@ -66,8 +77,8 @@ def rango_de_puertos(ip):
 
     start = time.time()
 
-    for port in range(inicio, fin+1):
-        scan_port(ip, port)
+    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+        executor.map(lambda port: scan_port(ip, port), range(inicio,fin+1))
 
     end = time.time()
 
